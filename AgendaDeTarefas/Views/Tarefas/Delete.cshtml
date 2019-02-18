@@ -1,0 +1,45 @@
+﻿@model AgendaDeTarefas.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Deletar Tarefa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<div>
+    <h4>Tarefa  @Html.DisplayFor(model => model.Titulo) </h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data Inicial
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+        <dt class = "col-sm-2">
+            Data Final
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataFinal)
+        </dd>
+        <dt class = "col-sm-2">
+           Tarefa Concluida
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Lista de Tarefas</a>
+    </form>
+</div>
